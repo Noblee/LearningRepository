@@ -1,5 +1,7 @@
 package basic;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -21,6 +23,19 @@ public class ClassCastTest {
     A a = new A();
     System.out.println(a.getClass().getSuperclass());
     System.out.println(a.getClass().getGenericSuperclass());
+    HashMap<String, String> map = new HashMap<>();
+    map.put("1","1");
+    map.put("2","2");
+
+
+    Iterator<String> iterator = map.values().iterator();
+    while (iterator.hasNext()){
+      String next = iterator.next();
+      next = next + "1";
+    }
+    System.out.println(map.get("1"));
+
+
   }
 
 }
