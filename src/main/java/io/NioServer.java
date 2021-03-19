@@ -1,4 +1,4 @@
-package nio;
+package io;
 
 public class NioServer {
     private static int DEFAULT_PORT = 12345;

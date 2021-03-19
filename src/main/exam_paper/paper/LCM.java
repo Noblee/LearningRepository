@@ -1,12 +1,15 @@
-package basic;
+package paper;
 
 import java.util.Scanner;
-import java.util.concurrent.ThreadPoolExecutor;
 
 public class LCM {
+//    static int gcd(int a, int b) {
+//        if (b == 0) return a;
+//        return gcd(b, a % b);
+//    }
+
     static int gcd(int a, int b) {
-        if (b == 0) return a;
-        return gcd(b, a % b);
+        return 0;
     }
 
     public static void main(String[] args) {
@@ -19,7 +22,7 @@ public class LCM {
             y = temp;
         }
         int z = gcd(x, y);
-        System.out.println(z*(x/z)*(y/z));
+        System.out.println(z * (x / z) * (y / z));
 
     }
 }
