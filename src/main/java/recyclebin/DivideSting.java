@@ -1,3 +1,5 @@
+package recyclebin;
+
 import java.util.Scanner;
 
 //给

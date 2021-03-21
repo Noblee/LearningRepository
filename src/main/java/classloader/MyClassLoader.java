@@ -12,6 +12,7 @@ public class MyClassLoader extends ClassLoader{
     public static final String driver = "src/main/others/";
     public static final String fileTyep = ".class";
 
+    @Override
     public Class findClass(String name) {
         byte[] data = loadClassData(name);
         return defineClass(data, 0, data.length);
