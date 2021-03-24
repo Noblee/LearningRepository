@@ -9,7 +9,7 @@ public class MyClassLoader extends ClassLoader{
     static {
         System.out.println("MyClassLoader");
     }
-    public static final String driver = "src/main/others/";
+    public static final String driver = "others/";
     public static final String fileTyep = ".class";
 
     @Override
