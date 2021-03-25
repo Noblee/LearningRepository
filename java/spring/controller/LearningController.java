@@ -1,7 +1,5 @@
 package spring.controller;
 
-import io.netty.util.internal.StringUtil;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -12,20 +10,59 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 
 @Controller
 @ResponseBody
 public class LearningController {
 
-    @GetMapping(value = {"index.html", ""})
-    public Callable<String> hello() throws InterruptedException {
-        return () -> "hello";
+    @GetMapping(value = {"/syncSleep", ""})
+    public String sync() throws InterruptedException {
+        Thread.sleep(1000);
+        return "hello";
     }
 
-    @GetMapping(value = {"/ServletAsync", ""})
+    @GetMapping(value = {"/asyncSleep", ""})
+    public Callable<String> async() {
+        return () -> {
+            Thread.sleep(1000);
+            return "hello";
+        };
+    }
+
+    @GetMapping(value = {"/syncCal", ""})
+    public String syncCal() throws InterruptedException {
+        int sum = 0;
+        for (int i = 0; i < 1000000; i++) {
+            sum++;
+        }
+        return "hello" + sum;
+    }
+
+    @GetMapping(value = {"/asyncCal", ""})
+    public Callable<String> asyncCal() {
+        return () -> {
+            int sum = 0;
+            for (int i = 0; i < 1000000; i++) {
+                sum++;
+            }
+            return "hello" + sum;
+        };
+    }
+
+    @GetMapping(value = {"/syncHttp", ""})
+    public String syncHttp() throws InterruptedException {
+        Thread.sleep(1000);
+        return "hello";
+    }
+
+    @GetMapping(value = {"/asyncHttp", ""})
+    public Callable<String> asyncHttp() {
+        return () -> {
+            Thread.sleep(1000);
+            return "hello";
+        };
+    }
+    @GetMapping(value = {"/ServletAsync"})
     public void learnServletAsync(HttpServletRequest request, HttpServletResponse response) throws IOException {
         System.out.println("start");
         PrintWriter out = response.getWriter();
