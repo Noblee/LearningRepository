@@ -2,6 +2,10 @@ package basic;
 
 import java.util.Scanner;
 
+/**
+ * tag
+ * <p><img src="image.jpg"/></p>
+ */
 public class Fibonacci {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -9,6 +13,5 @@ public class Fibonacci {
         double temp = Math.sqrt(5);
         double ret = ((1 / (temp)) * (Math.pow((1 + temp) / 2, n) - Math.pow((1 - temp) / 2, n)));
         System.out.println(Math.round(ret));
-
     }
 }
