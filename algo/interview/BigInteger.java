@@ -93,7 +93,7 @@ public class BigInteger {
         for (; i < Math.min(s1.length(), s2.length()); i++) {
             char c1 = s1.charAt(i);
             char c2 = s2.charAt(i);
-            if (c1 + c2 + flag - 2*'0'>= 10) {
+            if (c1 + c2 + flag - 2 * '0' >= 10) {
                 ans.append((char) (c1 + c2 + flag - 10 - '0'));
                 flag = 1;
             } else {

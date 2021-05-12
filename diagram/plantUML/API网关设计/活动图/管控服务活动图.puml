@@ -1,0 +1,21 @@
+@startuml
+start
+    if(校验是否有管控权限) then (yes);
+    else(no)
+    stop
+    endif
+    if(校验管控请求的完整性且合法) then (yes);
+    else(no)
+    stop
+    endif
+    :处理管控请求;
+    :增删改实体对应数据库对应数据项;
+if(是否需要针对运行时优化数据结构) then (yes)
+:优化请求的数据结构;
+:增删改数据库针对运行时优化的表;
+else (no)
+endif
+:刷新分布式缓存;
+:发送本地缓存刷新消息到消息队列;
+stop
+@enduml

@@ -14,8 +14,7 @@ public class GenericsTest {
         System.out.println(Arrays.toString(list.getClass().getTypeParameters()));
         System.out.println(Arrays.toString(map.getClass().getTypeParameters()));
         //Java运行时不存储范型类型的。但Java的泛型擦除是有范围的，即类定义中的泛型是不会被擦除的。
-        List<String> strings1 = new ArrayList<String>() {
-        };
+        List<String> strings1 = new ArrayList<String>() {};
         List<String> strings2 = new ArrayList<String>();
         System.out.println(strings1.getClass());
         System.out.println(strings2.getClass());

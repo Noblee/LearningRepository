@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+'participant participant as 用户
+hide footbox
+actor 网关调用者
+collections 运行时服务
+collections 鉴权服务
+autonumber
+网关调用者 -> 网关调用者 : 使用HMAC算法根据\nAccessKeySecret签名请求
+网关调用者 -> 运行时服务 : 调用网关\n(携带AccessKeyID和签名)
+运行时服务 -> 鉴权服务 : 根据AccessKeyID\n获取AccessKeySecret
+鉴权服务 -> 运行时服务 : AccessKeySecret
+运行时服务 -> 运行时服务 :验证签名
+@enduml

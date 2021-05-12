@@ -14,9 +14,9 @@ public class DistributeRedEnvelops {
         Random randomGenerator = new Random();
         for (int i = 1; i <= redEvelopNum - 1; i++) {
             int random = Math.abs(randomGenerator.nextInt()) % redEnvelop;
-            if (!randomSet.contains(random))
+            if (!randomSet.contains(random)) {
                 randomSet.add(random);
-            else {
+            } else {
                 i--;
             }
         }

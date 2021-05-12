@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 /**
  * tag
- * <p><img src="image.jpg"/></p>
  */
 public class Fibonacci {
     public static void main(String[] args) {

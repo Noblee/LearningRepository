@@ -1,0 +1,21 @@
+@startuml
+actor 用户
+cloud 中心网关{
+    node API网关管控服务
+    database 中心网关状态
+}
+cloud 北京非中心网关{
+    database 北京网关状态
+}
+cloud 上海非中心网关{
+    database 上海网关状态
+}
+cloud 新加坡非中心网关{
+    database 新加坡网关状态
+}
+用户 ->  API网关管控服务 :管控API网关
+API网关管控服务 -> 中心网关状态 :修改状态
+中心网关状态 --> 北京网关状态 :同步状态
+中心网关状态 --> 上海网关状态 :同步状态
+中心网关状态 --> 新加坡网关状态 :同步状态
+@enduml

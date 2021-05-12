@@ -1,0 +1,26 @@
+@startuml
+rectangle "请求接入模块"{
+    component 请求校验模块{
+        component 防重放组件
+        component 签名组件
+    }
+    component 流量控制模块{
+        component 集群流控组件
+        component API维度流控组件
+    }
+}
+rectangle 请求路由模块
+rectangle "请求接出模块"{
+    component 集群流控组件
+    component API维度流控组件
+}
+rectangle 日志模块
+请求校验模块 --> 请求路由模块
+请求路由模块 --> 请求接出模块
+请求接出模块 --> 日志模块
+'    [Invoker模块]-0)->[日志模块]
+'    [请求路由模块]-->[参数校验与协议转换模块]
+'    [Invoker模块]<-[参数校验与协议转换模块]
+'
+'    [身份认证模块]-->[请求路由模块]
+@enduml

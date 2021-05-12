@@ -1,0 +1,39 @@
+@startuml
+|API网关管控服务|
+start
+:用户更改API网关状态;
+
+|#AntiqueWhite|高可用数据库|
+:增删改数据库;
+|API网关管控服务|
+if () then (yes)
+  |API网关管控服务|
+  :刷新分布式缓存;
+
+else (no)
+|API网关管控服务|
+:打印错误日志;
+  stop
+endif
+:刷新分布式缓存;
+|分布式缓存|
+:增删改健值;
+|API网关管控服务|
+if () then (no)
+|API网关管控服务|
+:打印错误日志;
+else (yes)
+endif
+|API网关管控服务|
+:发送更改消息给MQ;
+|分布式MQ|
+:入队;
+|API网关管控服务|
+if () then (no)
+|API网关管控服务|
+:打印错误日志;
+else (yes)
+endif
+stop
+
+@enduml

@@ -1,0 +1,41 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+'participant participant as 用户
+actor API开发者
+participant 管控服务
+database 数据库
+database 分布式缓存
+queue 消息队列
+collections 运行时服务
+autonumber
+
+API开发者 -> 管控服务: 管控网关状态
+
+管控服务 -> "数据库" :增删改数据库
+alt 失败情况
+    数据库 -> "管控服务" :返回错误
+    管控服务-> API开发者:返回错误
+else 成功情况
+     数据库 -> "管控服务" :返回最新数据
+     管控服务-> API开发者:返回最新状态
+
+管控服务 -> "分布式缓存" :刷新分布式缓存
+alt 成功情况
+分布式缓存 -> 管控服务:OK
+else 失败情况
+分布式缓存 -> 管控服务:Error
+管控服务->管控服务:发送错误日志
+end
+管控服务 -> "消息队列" :发送本地缓存刷新消息
+alt 失败情况
+    消息队列 -> 管控服务:Error
+    管控服务->管控服务: 发送错误日志
+else 成功情况
+     "消息队列" -> 管控服务:OK
+     "消息队列"->"运行时服务" :推送消息
+     "运行时服务"->"运行时服务" :刷新本地缓存
+     "运行时服务"->"运行时服务" :记录日志
+end
+end
+
+@enduml
