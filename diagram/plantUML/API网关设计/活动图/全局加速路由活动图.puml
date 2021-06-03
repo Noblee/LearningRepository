@@ -1,25 +1,18 @@
 @startuml
 start
-    if(请求是否携带全球加速路由标记头) then (yes);
-    else(no)
-    stop
-    endif
-    if(是否配置了全球加速路由) then (yes);
-    else(no)
-    stop
-    endif
-   if(当前单元是否为路由目的单元) then (no);
-    else(yes)
-    stop
-    endif
-    :处理管控请求;
-    :增删改实体对应数据库对应数据项;
-if(是否需要针对运行时优化数据结构) then (yes)
-:优化请求的数据结构;
-:增删改数据库针对运行时优化的表;
-else (no)
+if(请求是否携带全球加速路由标记头) then (yes);
+else(no)
+stop
 endif
-:刷新分布式缓存;
-:发送本地缓存刷新消息到消息队列;
+if(是否配置了全球加速路由) then (yes);
+else(no)
+stop
+endif
+if(当前单元是否为路由的目的单元) then (no);
+else(yes)
+stop
+endif
+:获取目的单元域名;
+:转发请求;
 stop
 @enduml

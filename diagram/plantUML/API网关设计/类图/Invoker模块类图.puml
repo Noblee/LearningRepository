@@ -1,0 +1,8 @@
+@startuml
+@startuml
+class A {
+{static} int counter
++void {abstract} start(int timeoutms)
++void {abstract} start(Duration timeout)
+}
+@enduml

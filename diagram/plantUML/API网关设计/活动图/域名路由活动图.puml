@@ -1,0 +1,25 @@
+@startuml
+start
+if(是否存在"已路由"头) then (no);
+else(yes)
+stop
+endif
+:根据请求获取路由配置;
+if(是否存在路由配置) then (yes);
+else(no)
+stop
+endif
+if(当前单元是否为路由的目的单元) then (no);
+else(yes)
+stop
+endif
+:生成随机数作为随机灰度依据;
+if(随机数命中灰度比例) then (yes);
+else(no)
+stop
+endif
+:添加"已路由"请求头;
+:转发请求;
+stop
+note right: 完成路由
+@enduml
