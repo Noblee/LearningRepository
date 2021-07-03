@@ -15,8 +15,10 @@ public class ClassLoaderTest {
         try {
             Class c1 = cl1.loadClass("Hello");
             Object object = c1.newInstance();
-            Method main = c1.getMethod("print");
-            main.invoke(object);
+            Method print = c1.getMethod("print");
+            System.out.println(c1.getClassLoader());
+            System.out.println(Thread.currentThread().getContextClassLoader());
+            print.invoke(object);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
             System.out.println("main-ClassNotFoundException");

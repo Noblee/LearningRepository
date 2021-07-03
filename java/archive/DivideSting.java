@@ -1,4 +1,4 @@
-package recyclebin;
+package archive;
 
 import java.util.Scanner;
 
