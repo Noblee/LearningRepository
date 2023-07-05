@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="哈尔滨医科大学附属第一医院">
+    <meta name="description" content="哈尔滨医科大学附属第一医院">
+    <title>    陪护证
+</title>
+    <link href="https://webapp.hmu1hospital.org.cn/wehospital/bundles/app/css/common/weui.min.css?v=3" rel="stylesheet">
+    <link href="https://webapp.hmu1hospital.org.cn/wehospital/bundles/app/css/common/jquery-weui.min.css?v=3" rel="stylesheet">
+    <link href="https://webapp.hmu1hospital.org.cn/wehospital/bundles/app/css/common/swiper.min.css?v=3" rel="stylesheet">
+    <link href="https://webapp.hmu1hospital.org.cn/wehospital/bundles/app/css/common/common.css?v=3" rel="stylesheet">
+                                <link href="https://webapp.hmu1hospital.org.cn/wehospital/bundles/app/css/card.css?v=3" rel="stylesheet">
+    <link href="https://webapp.hmu1hospital.org.cn/wehospital/bundles/app/css/ihospital.css?v=3" rel="stylesheet">
+
+    <script src="https://webapp.hmu1hospital.org.cn/wehospital/bundles/app/js/jquery-3.2.1.min.js?v=3"></script>
+    <script src="https://webapp.hmu1hospital.org.cn/wehospital/bundles/app/js/plugins/jquery-weui.min.js?v=3"></script>
+        <script src="https://webapp.hmu1hospital.org.cn/wehospital/bundles/app/js/plugins/swiper.min.js?v=3"></script>
+    <script src="http://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+            <script>
+                                                    
+                /**
+         *  如果ajax返回值为abort,或者页面未加载完全,则不输出错误信息
+         */
+        $.ajaxPrefilter( function(options, originalOptions, jqXHR){
+            var error = options.error;
+            options.error = function (xhr) {
+                if ( xhr.status === 0 || xhr.readyState === 0 || xhr.statusText === 'abort' ) {
+                    return;
+                }else{
+                    error();
+                }
+            }
+        });
+    </script>
+</head>
+<body ontouchstart>
+        <style>
+        body{
+            background-color: #1ac38c;
+        }
+        #status:before{
+            border-top: 0px solid #d9d9d9;
+        }
+    </style>
+    <div style="color: #fff;padding-left: 15px;margin-top: 10px;height: 40px;">
+        <div>
+            <img src="https://webapp.hmu1hospital.org.cn/wehospital/bundles/app/images/ms/logo.png?v=3" style="width:30px;border-radius: 50%;float: left;"alt="哈尔滨医科大学附属第一医院">
+        </div>
+        <div style="float:left;font-size:20px;padding-left:5px;font-weight: bold">哈尔滨医科大学附属第一医院</div>
+    </div>
+    <h2 style="color: #fff;font-size: 25px;text-align: center;">陪护证</h2>
+    <div class="postRel w10p" align="center" style="margin: 0px 15px 0px 15px;">
+        <div style="margin-top: 80px; border:1px solid #E0E0E0; border-radius: 10px; background-color: #FFFFFF;">
+            <div class="postRel w100p" align="center" style="margin-top: -60px;">
+                <img src="./screenshot-20230705-111334.png" class="hauto w60" style="width:200px;margin-left:0px;border-radius: 10%;height: 200px;">
+            </div>
+            <div class="weui-cell" id="status">
+                <div class="weui-media-box__hd" style="width: 90%">
+                    <p style="text-align: center;">
+                        <span class="f20" style="color: #333333;font-weight:bold">王宇</span>&nbsp;
+                        <span class="f15 font-black" style="color: #00aac6;">13122660731</span>
+                    </p>
+                    <p style="text-align: center;">
+                        <span class="f15" style="color: #333333;">与患者关系:</span>&nbsp;
+                        <span class="f18" style="color: #333333;font-weight: bold;">家属</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                    </p>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__bd weui-cell_primary">
+                    <p style="float: left;width:100%;">
+                        <span class="f15" style="font-size:15px;color: #333333;float:left;">患者姓名 : </span>&nbsp;
+                        <span class="f15 font-black" style="font-size:15px;color: #666666;float:right;">于泓</span>
+                    </p>
+                    <p style="float: left;width:100%;">
+                        <span class="f15" style="font-size:15px;color: #333333;float:left;">住&nbsp;&nbsp;院&nbsp;&nbsp;号 : </span>&nbsp;
+                        <span class="f15 font-black" style="font-size:15px;color: #666666;float:right;">920555372</span>
+                    </p>
+                    <p style="float: left;width:100%;">
+                        <span class="f15" style="font-size:15px;color: #333333;float:left;">住院科室 : </span>&nbsp;
+                        <span class="f15 font-black" style="font-size:15px;color: #666666;float:right;">神经内科二科</span>
+                    </p>
+                    <p style="float: left;width:100%;">
+                        <span class="f15" style="font-size:15px;color: #333333;float:left;">住院信息 : </span>&nbsp;
+                        <span class="f15 font-black" style="font-size:15px;color: #666666;float:right;">神经内科二病房0701床</span>
+                    </p>
+                    <p style="float: left;width:100%;">
+                        <span class="f15" style="font-size:15px;color: #333333;float:left;">审核信息 : </span>&nbsp;
+                        <span class="f15 font-black" style="font-size:15px;color: #666666;float:right;">护士站2023-07-03审核</span>
+                    </p>
+                </div>
+            </div>
+            <div class="weui-cell" onload="showTime()">
+                <div class="weui-cell__bd weui-cell_primary">
+                    <p style="float: left;width:100%;">
+                        <span class="f15" style="font-size:15px;color: #333333;float:left;">有效期至 : </span>&nbsp;
+                        <span class="f15 font-black" style="font-size:20px;color: #666666;font-weight: bold;float:right;">2023-10-11 14:15:00</span>
+                    </p>
+                    <p style="float: left;width:100%;">
+                        <span class="f15" style="font-size:15px;color: #333333;float:left;">当前时间 : </span>&nbsp;
+                        <span class="f15 font-black" style="font-size:20px;color: #1ac38c;font-weight: bold;float:right;" id="time"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <p class="demos-content-padded" style="margin-top:30px;">
+        <a class="weui-btn weui-btn_warn" id="delete" style="width:40%;float:left;border-radius: 10px;">解绑</a>
+        <a class="weui-btn weui-btn_warn" id="applied" style="width:40%;float:right;margin-top: 0px;background-color:#fff;color:#1ac38c;border-radius: 10px;">查看陪护记录</a>
+    </p>
+
+    
+    <script>
+    </script>
+
+    <script>
+        function showTime() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;  //因为month属性从0开始所以加1
+            var day = date.getDate();   // 日
+            var week = date.getDay();  // 星期几，是个数字
+            var hour = date.getHours();
+            var minute = date.getMinutes();
+            var second = date.getSeconds();
+            month = month < 10 ? "0" + month : month;
+            day = day < 10 ? "0" + day : day;
+            hour = hour < 10 ? "0" + hour : hour;
+            minute = minute < 10 ? "0" + minute : minute;
+            second = second < 10 ? "0" + second : second;
+            var current = year + "-" + month + "-" + day + " " + " " + hour + ":" + minute + ":" + second;
+            document.getElementById("time").innerHTML = current;
+        }
+        setInterval("showTime()", 1000);//每隔1000毫秒（即1秒）显示一次当前时间
+        $('#applied').on('click',function () {
+            window.location.href='/wehospital/inpatient/escortcardlist';
+        })
+        $('#delete').on('click', function () {
+            if (confirm('是否解除绑定？') == false) {
+                return false;
+            }
+            $.ajax({
+                type: "POST",
+                url: '/wehospital/inpatient/escortcarddelete',
+                data: {
+                    id: 'b3VzL1dGTFU'
+                },
+                dataType: "json",
+                timeout: 30000,
+                success: function (data) {
+                    if (data.code == 0){
+                        alert(data.msg);
+                        window.location.href='/wehospital/inpatient/escortcardlist';
+                    }else{
+                        alert(data.msg);
+                        return false;
+                    }
+                },
+                error: function (error) {
+                    alert('解绑失败,请退出重试')
+                }
+            });
+        })
+    </script>
+</body>
+</html>
